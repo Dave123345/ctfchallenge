@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost in the Pixels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+        .secret::after {
+            content: "flag";
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body class="text-center bg-light">
+    <div name="thisistheflag" class="container py-5">
+        <h1 class="mb-4">Find the Hidden Treasure</h1>
+        <p>Can you find the hidden flag?</p>
+        
+        <div class="row justify-content-center" id="image-container">
+            <!-- Images will be inserted here -->
+        </div>
+    </div>
+    
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">&copy; by dave</p>
+    </footer>
+    
+    <script>
+        const images = [
+            "https://source.unsplash.com/random/200x200?1",
+            "https://source.unsplash.com/random/200x200?2",
+            "https://source.unsplash.com/random/200x200?3",
+            "https://source.unsplash.com/random/200x200?4",
+            "https://source.unsplash.com/random/200x200?5",
+            "https://source.unsplash.com/random/200x200?6",
+            "https://source.unsplash.com/random/200x200?7",
+            "https://source.unsplash.com/random/200x200?8",
+            "https://source.unsplash.com/random/200x200?9",
+            "https://source.unsplash.com/random/200x200?10"
+        ];
+
+        const container = document.getElementById("image-container");
+
+        images.forEach(src => {
+            let col = document.createElement("div");
+            col.className = "col-md-3 col-sm-4 col-6 mb-3";
+            let img = document.createElement("img");
+            img.src = src;
+            img.className = "img-fluid";
+            col.appendChild(img);
+            container.appendChild(col);
+        });
+    </script>
+</body>
+</html>
